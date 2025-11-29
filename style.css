@@ -1424,3 +1424,550 @@ button:hover ~ .custom-cursor,
 a, button, .btn-box a, .project-card, .skill-category, input, textarea, select, .theme-toggle {
     cursor: none !important;
 }
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+/* Hamburger Menu - Hidden by default on desktop */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 5px;
+    transition: var(--transition);
+}
+
+.menu-toggle span {
+    width: 28px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover span {
+    background: var(--secondary-color);
+}
+
+/* Hamburger animation when active */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Touch Device Optimizations - Disable custom cursor */
+@media (hover: none) and (pointer: coarse) {
+    * {
+        cursor: auto !important;
+    }
+    
+    .custom-cursor,
+    .cursor-follower {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   TABLET LANDSCAPE (1024px and below)
+   ============================================ */
+@media (max-width: 1024px) {
+    section {
+        padding: 100px 4% 60px;
+    }
+    
+    .home {
+        gap: 2rem;
+    }
+    
+    .home-content h1 {
+        font-size: 3rem;
+    }
+    
+    .home-content h3 {
+        font-size: 1.75rem;
+    }
+    
+    .about-content,
+    .projects-content,
+    .skills-content {
+        padding: 2rem;
+    }
+    
+    .about-content h2,
+    .projects-content h2,
+    .skills-content h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ============================================
+   TABLET PORTRAIT & LARGE PHONES (768px and below)
+   ============================================ */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .header {
+        padding: 15px 4%;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+    
+    /* Show hamburger menu */
+    .menu-toggle {
+        display: flex;
+        order: 3;
+    }
+    
+    /* Hide desktop navigation */
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--bg-card);
+        border-left: 2px solid var(--secondary-color);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 80px 30px 30px;
+        gap: 0;
+        box-shadow: var(--shadow-xl);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+    }
+    
+    .navbar.active {
+        right: 0;
+    }
+    
+    .navbar a {
+        width: 100%;
+        padding: 15px 20px;
+        margin: 5px 0;
+        border-radius: 10px;
+        font-size: 18px;
+        text-align: left;
+        border-left: 3px solid transparent;
+    }
+    
+    .navbar a:hover,
+    .navbar a.active {
+        background: var(--bg-secondary);
+        border-left-color: var(--secondary-color);
+        transform: translateX(5px);
+    }
+    
+    .navbar a::before {
+        display: none;
+    }
+    
+    /* Header controls */
+    .header-controls {
+        gap: 0.5rem;
+        order: 2;
+    }
+    
+    .theme-toggle {
+        width: 50px;
+        height: 25px;
+        margin-left: 10px;
+    }
+    
+    .theme-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .language-selector {
+        margin-left: 10px;
+    }
+    
+    #language-select {
+        font-size: 14px;
+        padding: 4px;
+    }
+    
+    /* Home section - Stack vertically */
+    .home {
+        flex-direction: column-reverse;
+        gap: 2rem;
+        padding: 100px 5% 60px;
+        text-align: center;
+    }
+    
+    .home-content {
+        max-width: 100%;
+    }
+    
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .home-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .home-content p {
+        font-size: 1rem;
+    }
+    
+    .home-content .btn-box {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .image-container {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    /* About section */
+    .about-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .about-content h2 {
+        font-size: 2rem;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+    }
+    
+    .sections {
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 16px;
+    }
+    
+    /* Projects section */
+    .projects-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .projects-content h2 {
+        font-size: 2rem;
+    }
+    
+    .projects-list {
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        margin-bottom: 1rem;
+    }
+    
+    .project-info h3 {
+        font-size: 1.25rem;
+    }
+    
+    .project-tech {
+        gap: 8px;
+    }
+    
+    .tech-tag {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+    
+    /* Contact section */
+    .full {
+        padding: 1.5rem;
+        margin: 1rem auto;
+    }
+    
+    .Contact-Form h1 {
+        font-size: 2rem;
+    }
+    
+    .Contact-Form p {
+        font-size: 1rem;
+    }
+    
+    .Contact-Form button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    /* Footer */
+    .footerContainer {
+        padding: 20px;
+    }
+    
+    .socialIcons {
+        gap: 10px;
+    }
+    
+    .socialIcons a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+/* ============================================
+   MOBILE PHONES (480px and below)
+   ============================================ */
+@media (max-width: 480px) {
+    /* Header */
+    .header {
+        padding: 12px 3%;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .navbar {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .theme-toggle {
+        width: 45px;
+        height: 22px;
+        margin-left: 5px;
+    }
+    
+    .theme-icon {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .language-selector {
+        margin-left: 5px;
+    }
+    
+    #language-select {
+        font-size: 12px;
+        padding: 3px;
+    }
+    
+    /* Sections */
+    section {
+        padding: 80px 3% 50px;
+        min-height: auto;
+    }
+    
+    /* Home section */
+    .home {
+        padding: 80px 5% 50px;
+    }
+    
+    .home-content h1 {
+        font-size: 2rem;
+        min-height: 60px;
+    }
+    
+    .home-content h3 {
+        font-size: 1.25rem;
+    }
+    
+    .home-content p {
+        font-size: 0.95rem;
+        margin: 1rem 0 2rem;
+    }
+    
+    .btn-box {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .btn-box a {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .image-container {
+        max-width: 300px;
+    }
+    
+    /* About section */
+    .about-content {
+        padding: 1.5rem 1rem;
+        border-radius: 15px;
+    }
+    
+    .about-content h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .about-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .sections {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 14px;
+    }
+    
+    .section-link {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        background: var(--bg-secondary);
+        border-radius: 8px;
+    }
+    
+    /* Projects section */
+    .projects-content {
+        padding: 1.5rem 1rem;
+        border-radius: 15px;
+    }
+    
+    .projects-content h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+    
+    .project-info {
+        padding: 1rem;
+    }
+    
+    .project-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-date {
+        font-size: 0.85rem;
+    }
+    
+    .project-info p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .project-tech {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+    
+    /* Contact form */
+    .full {
+        padding: 1.25rem;
+        border-radius: 15px;
+    }
+    
+    .Contact-Form h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .Contact-Form p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .input-fields input,
+    .msg textarea {
+        padding: 0.875rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .msg textarea {
+        height: 140px;
+    }
+    
+    .Contact-Form button {
+        padding: 0.875rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Footer */
+    .footerContainer {
+        padding: 15px;
+    }
+    
+    .footerBottom p {
+        font-size: 0.85rem;
+    }
+    
+    .socialIcons a {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .footerNav ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   VERY SMALL PHONES (360px and below)
+   ============================================ */
+@media (max-width: 360px) {
+    .home-content h1 {
+        font-size: 1.75rem;
+    }
+    
+    .home-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .about-content h2,
+    .projects-content h2,
+    .Contact-Form h1 {
+        font-size: 1.5rem;
+    }
+    
+    .navbar {
+        padding: 70px 20px 20px;
+    }
+    
+    .navbar a {
+        font-size: 16px;
+        padding: 12px 15px;
+    }
+}
+
+/* Overlay for mobile menu */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .menu-overlay {
+        display: none;
+    }
+    
+    .menu-overlay.active {
+        display: block;
+    }
+}

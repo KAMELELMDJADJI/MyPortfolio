@@ -75,13 +75,57 @@
 .skill-dot:hover { transform: translateY(-2px); box-shadow: 0 0 12px rgba(245,176,65,0.35); }
 
 /* Toggle */
-.details-toggle-wrap { display: flex; justify-content: center; margin: 1rem 0 1.5rem; }
-.details-toggle {
-  padding: .6rem 1rem; border-radius: 12px; border: 1px solid var(--border-color);
-  color: var(--primary-color); background: var(--bg-card); box-shadow: var(--shadow-sm);
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+.details-toggle-wrap { 
+  display: flex; 
+  justify-content: center; 
+  margin: 1.5rem 0; 
 }
-.details-toggle:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--secondary-color); }
+
+.details-toggle {
+  padding: .75rem 1.5rem; 
+  border-radius: 12px; 
+  border: 2px solid var(--secondary-color);
+  color: var(--primary-color); 
+  background: var(--bg-card); 
+  box-shadow: var(--shadow-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease, color .25s ease;
+}
+
+.details-toggle:hover { 
+  transform: translateY(-2px); 
+  box-shadow: var(--shadow-md); 
+  border-color: var(--secondary-color);
+  background: var(--secondary-color);
+  color: white;
+}
+
+/* Skills details section - hidden by default */
+.skills-details {
+  display: none;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  animation: fadeUp 0.5s ease;
+}
+
+.skills-section.expanded .skills-details {
+  display: grid;
+}
+
+@media (max-width: 900px) { 
+  .skills-details { 
+    grid-template-columns: repeat(2, minmax(260px, 1fr)); 
+  } 
+}
+
+@media (max-width: 640px) { 
+  .skills-details { 
+    grid-template-columns: 1fr; 
+  } 
+}
 
 /* Row 2 — Category Grid */
 /* Default hidden; shown when Skills section has .expanded */
@@ -127,6 +171,11 @@
   transform: scale(.98); opacity: 0; transition: transform .25s ease, box-shadow .25s ease, opacity .35s ease;
 }
 .badge.show { opacity: 1; transform: scale(1); }
+/* Show badges when section is expanded */
+.skills-section.expanded .badge {
+  opacity: 1;
+  transform: scale(1);
+}
 .badge:hover { box-shadow: 0 0 12px rgba(245,176,65,0.35); }
 .badge.soft { border-style: dashed; }
 .badge.lang { border-color: rgba(100, 180, 255, 0.35); }

@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="skills.css">
     <link rel="icon" href="images/LogoBrowser.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Portfolio</title>
 </head>
+
 <body>
     <header class="header">
         <a href="#" class="logo"> &lt;/&gt; Kamel</a>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <nav class="navbar">
-          <a href="#home" class="active" data-en="Home" data-fr="Accueil">Home</a>
-          <a href="#about" data-en="About" data-fr="À Propos">About</a>
-          <a href="#skills" data-en="Skills" data-fr="Compétences">Skills</a>
-          <a href="#projects" data-en="Projects and Work" data-fr="Projets et Travaux">Projects and Work</a>
-          <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a> 
+            <a href="#home" class="active" data-en="Home" data-fr="Accueil">Home</a>
+            <a href="#about" data-en="About" data-fr="À Propos">About</a>
+            <a href="#skills" data-en="Skills" data-fr="Compétences">Skills</a>
+            <a href="#projects" data-en="Projects and Work" data-fr="Projets et Travaux">Projects and Work</a>
+            <a href="#contact" data-en="Contact" data-fr="Contact">Contact</a>
         </nav>
         <div class="header-controls">
             <div class="theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
@@ -29,239 +38,254 @@
                     <option value="en">English</option>
                     <option value="fr">Français</option>
                 </select>
-            </div> 
+            </div>
         </div>
     </header>
-    
+
     <section class="home" id="home">
         <div class="home-content">
             <h1 id="animated-name" data-en="Hi, I am KAMEL" data-fr="Salut, je suis KAMEL">Hi, I am KAMEL</h1>
             <h3 data-en="Software Engineering" data-fr="Ingénierie des Logiciels">Software Engineering</h3>
-            <p data-en="Graduate in informatics specializing in software engineering and computer systems." data-fr="Diplômé en informatique specialité ingénierie des logicielles et systèmes d'informatiques.">Degree in Software Engineering and computer systems.</p>
+            <p data-en="Graduate in informatics specializing in software engineering and computer systems."
+                data-fr="Diplômé en informatique specialité ingénierie des logicielles et systèmes d'informatiques.">
+                Degree in Software Engineering and computer systems.</p>
             <div class="btn-box">
                 <a href="#about" data-en="Read more" data-fr="Lire plus">Read more</a>
-                <a id="cv-link" href="Kamel_CV_en.pdf" download data-en="View My CV" data-fr="Voir mon CV">View My CV</a>
-            </div> 
+                <a id="cv-link" href="Kamel_CV_en.pdf" download data-en="View My CV" data-fr="Voir mon CV">View My
+                    CV</a>
+            </div>
         </div>
         <div class="image-container">
             <img src="images/home.jpg" alt="Description of the image" id="home-image" class="home-image-light">
-            <img src="images/home.jpg" alt="Description of the image" id="home-image-dark" class="home-image-dark" style="display: none;">
+            <img src="images/home.jpg" alt="Description of the image" id="home-image-dark" class="home-image-dark"
+                style="display: none;">
         </div>
-        
+
     </section>
 
     <section class="about fade-in" id="about">
         <div class="about-content">
             <h2 data-en="About Me" data-fr="À Propos de Moi">About Me</h2>
             <!-- More about content here -->
-            <p data-en="Degree in Software Engineering and Computer Systems with expertise in computer vision and natural language processing. Skilled in Java, web and desktop development, simulation, and IoT. Proficient in object-oriented programming and known for strong problem-solving, research, and collaborative skills." data-fr="Diplôme en ingénierie logicielle et systèmes d'information avec une expertise en vision par ordinateur et traitement du langage naturel. Compétences en Java, développement web et desktop, simulation et IoT. Compétent en programmation orientée objet et reconnu pour des compétences en résolution de problèmes, recherche et collaboration.">Degree in Software Engineering and Information Systems with expertise in computer vision and natural language processing. Skilled in Java, web and desktop development, simulation, and IoT. Proficient in object-oriented programming and known for strong problem-solving, research, and collaborative skills.</p>
-           <div class="sections">
-            <a href="#education" id="education-link" class="section-link" data-en="Education" data-fr="Éducation">Education</a>
-            <a href="#projects" id="projects-link" class="section-link" data-en="Projects and Work" data-fr="Projets et Travaux">Projects and Work</a>
-            <a href="#internships" id="internships-link" class="section-link" data-en="Internships" data-fr="Stages">Internships</a>
+            <p data-en="Degree in Software Engineering and Computer Systems with expertise in computer vision and natural language processing. Skilled in Java, web and desktop development, simulation, and IoT. Proficient in object-oriented programming and known for strong problem-solving, research, and collaborative skills."
+                data-fr="Diplôme en ingénierie logicielle et systèmes d'information avec une expertise en vision par ordinateur et traitement du langage naturel. Compétences en Java, développement web et desktop, simulation et IoT. Compétent en programmation orientée objet et reconnu pour des compétences en résolution de problèmes, recherche et collaboration.">
+                Degree in Software Engineering and Information Systems with expertise in computer vision and natural
+                language processing. Skilled in Java, web and desktop development, simulation, and IoT. Proficient in
+                object-oriented programming and known for strong problem-solving, research, and collaborative skills.
+            </p>
+            <div class="sections">
+                <a href="#education" id="education-link" class="section-link" data-en="Education"
+                    data-fr="Éducation">Education</a>
+                <a href="#projects" id="projects-link" class="section-link" data-en="Projects and Work"
+                    data-fr="Projets et Travaux">Projects and Work</a>
+                <a href="#internships" id="internships-link" class="section-link" data-en="Internships"
+                    data-fr="Stages">Internships</a>
+            </div>
+            <div id="education" class="section-content">
+                <h3 data-en="University Education" data-fr="Éducation Universitaire">University Education</h3>
+                <ul>
+                    <li data-en="Master's in Information Systems Aug 2022 – Jul 2024"
+                        data-fr="Master en Systèmes d'Information Août 2022 – Juil 2024">Master's in Information Systems
+                        Aug 2022 – Jul 2024 </li>
+                    <li data-en="Bachelor's in Computer Systems Aug 2019 – Jul 2022"
+                        data-fr="Licence en Systèmes Informatiques Août 2019 – Juil 2022">Bachelor's in Computer Systems
+                        Aug 2019 – Jul 2022 </li>
+                    <li data-en="Baccalaureate in Electrical Engineering Jul 2019"
+                        data-fr="Baccalauréat en Génie Électrique Juil 2019">Baccalaureate in Electrical Engineering Jul
+                        2019</li>
+                </ul>
+            </div>
+            <div id="about-projects" class="section-content">
+                <h3 data-en="Projects" data-fr="Projets">Projects</h3>
+                <ul>
+                    <li data-en="Study of the impact of task placement level on the efficiency of an IoT system Dec 2023 – Aug 2024"
+                        data-fr="Étude de l'impact du placement des tâches sur l'efficacité d'un système IoT Déc 2023 – Août 2024">
+                        Study of the impact of task placement level on the efficiency of an IoT system Dec 2023 – Aug
+                        2024</li>
+                    <li data-en="Development and design of an application for the medical management of an ophthalmology clinic Jan 2022 – Aug 2022"
+                        data-fr="Développement et conception d'une application pour la gestion médicale d'une clinique d'ophtalmologie Jan 2022 – Août 2022">
+                        Development and design of an application for the medical management of an ophthalmology clinic
+                        Jan 2022 – Aug 2022</li>
+                </ul>
+            </div>
+            <div id="internships" class="section-content">
+                <h3 data-en="Internships" data-fr="Stages">Internships</h3>
+                <ul>
+                    <li data-en="Internship to develop a medical management application for an ophthalmology clinic Management Project Centre D’ophtalmologie Chlef (OPHTA) Dr: Chemami.2021–2022"
+                        data-fr="Stage pour développer une application de gestion médicale pour une clinique d'ophtalmologie (OPHTA) Dr: Chemami. 2021–2022">
+                        Internship to develop a medical management application for an ophthalmology clinic
+                        Management Project Centre D’ophtalmologie Chlef (OPHTA) Dr: Chemami.2021–2022</li>
+                </ul>
+            </div>
         </div>
-        <div id="education" class="section-content">
-            <h3>University Education</h3>
-            <ul>
-                <li>Master's in Information Systems Aug 2022 – Jul 2024 </li>
-                <li>Bachelor's in Computer Systems Aug 2019 – Jul 2022 </li>
-                <li>Baccalaureate in Electrical Engineering Jul 2019</li>
-            </ul>
-        </div>
-        <div id="about-projects" class="section-content">
-            <h3>Projects</h3>
-            <ul>
-                <li>Study of the impact of task placement level on the efficiency of an IoT system Dec 2023 – Aug 2024</li>
-                <li>Development and design of an application for the medical management of an ophthalmology clinic Jan 2022 – Aug 2022</li>
-            </ul>
-        </div>
-        <div id="internships" class="section-content">
-            <h3>Internships</h3>
-            <ul>
-                <li>Internship to develop a medical management application for an ophthalmology clinic 
-                    Management Project Centre D’ophtalmologie Chlef (OPHTA) Dr: Chemami.2021–2022</li>
-            </ul>
-        </div>
-    </div>
     </section>
 
-        <!-- Skills: High-end animated section -->
-        <section id="skills" class="skills-section fade-in" aria-labelledby="skills-heading">
-            <div class="skills-inner container">
-                <h2 id="skills-heading" class="section-title">Skills</h2>
+    <!-- Skills: High-end animated section -->
+    <section id="skills" class="skills-section fade-in" aria-labelledby="skills-heading">
+        <div class="skills-inner container">
+            <h2 id="skills-heading" class="section-title" data-en="Skills" data-fr="Compétences">Skills</h2>
 
-                <!-- Row 1: Overview Cards (2-column layout; 3rd spans full width) -->
-                <div class="overview-row">
-                    <div class="overview-card" data-animate>
-                        <div class="card-icon">💻</div>
-                        <h3 class="card-title">Programming Experience</h3>
-                        <div class="card-skills">
-                            <span class="skill-dot">Java</span>
-                            <span class="skill-dot">C#</span>
-                            <span class="skill-dot">C++</span>
-                            <span class="skill-dot">Python</span>
-                        </div>
-                    </div>
-
-                    <div class="overview-card" data-animate>
-                        <div class="card-icon">🌐</div>
-                        <h3 class="card-title">Web &amp; Software Development</h3>
-                        <div class="card-skills">
-                            <span class="skill-dot">HTML</span>
-                            <span class="skill-dot">CSS</span>
-                            <span class="skill-dot">JavaScript</span>
-                            <span class="skill-dot">ASP.NET</span>
-                        </div>
-                    </div>
-
-                    <div class="overview-card overview-wide" data-animate>
-                        <div class="card-icon">🧰</div>
-                        <h3 class="card-title">Tools &amp; Technologies</h3>
-                        <div class="card-skills small">
-                            <span class="skill-dot">Databases</span>
-                            <span class="skill-dot">IDEs</span>
-                            <span class="skill-dot">Modeling</span>
-                            <span class="skill-dot">Version Control</span>
-                        </div>
+            <!-- Row 1: Overview Cards (2-column layout; 3rd spans full width) -->
+            <div class="overview-row">
+                <div class="overview-card" data-animate>
+                    <div class="card-icon">💻</div>
+                    <h3 class="card-title" data-en="Programming Languages" data-fr="Langages de Programmation">
+                        Programming Languages</h3>
+                    <div class="card-skills">
+                        <span class="skill-dot">Java</span>
+                        <span class="skill-dot">C#</span>
+                        <span class="skill-dot">JavaScript</span>
+                        <span class="skill-dot">C++</span>
+                        <span class="skill-dot">Python</span>
+                        <span class="skill-dot">SQL</span>
                     </div>
                 </div>
 
-                <!-- Show More toggle to expand detailed categories -->
-                                <div class="details-toggle-wrap">
-                                        <button id="details-toggle" type="button" class="details-toggle"
-                                            data-en="Show More Details ▼" data-fr="Afficher plus ▼"
-                                            data-expanded-en="Hide Details ▲" data-expanded-fr="Masquer ▲">
-                                            Show More Details ▼
-                                        </button>
-                                </div>
-
-                <!-- Row 2: Skill Category Grid (hidden by default, expanded with toggle) -->
-                <div id="category-grid" class="category-grid" aria-hidden="true">
-                    <article class="category-card" data-animate>
-                        <h4 class="category-title">Programming Languages</h4>
-                        <div class="badges">
-                            <span class="badge" data-delay="0">Java</span>
-                            <span class="badge" data-delay="60">Java Swing</span>
-                            <span class="badge" data-delay="120">SQL</span>
-                            <span class="badge" data-delay="180">C#</span>
-                            <span class="badge" data-delay="240">JavaScript</span>
-                            <span class="badge" data-delay="300">C++</span>
-                            <span class="badge" data-delay="360">Python</span>
-                        </div>
-                    </article>
-
-                    <article class="category-card" data-animate>
-                        <h4 class="category-title">Web Development</h4>
-                        <div class="badges">
-                            <span class="badge" data-delay="0">HTML</span>
-                            <span class="badge" data-delay="50">CSS</span>
-                            <span class="badge" data-delay="100">Java</span>
-                            <span class="badge" data-delay="150">ASP.NET</span>
-                            <span class="badge" data-delay="200">JavaScript</span>
-                            <span class="badge" data-delay="250">WordPress</span>
-                            <span class="badge" data-delay="300">MySQL</span>
-                        </div>
-                    </article>
-
-                    <article class="category-card" data-animate>
-                        <h4 class="category-title">Desktop Development</h4>
-                        <div class="badges">
-                            <span class="badge" data-delay="0">Java</span>
-                            <span class="badge" data-delay="60">Java Swing</span>
-                            <span class="badge" data-delay="120">MySQL</span>
-                            <span class="badge" data-delay="180">NetBeans IDE</span>
-                        </div>
-                    </article>
-
-                    <article class="category-card" data-animate>
-                        <h4 class="category-title">Simulation Tools</h4>
-                        <div class="badges">
-                            <span class="badge" data-delay="0">iFogSim v2</span>
-                            <span class="badge" data-delay="80">MATLAB</span>
-                        </div>
-                    </article>
-
-                    <article class="category-card" data-animate>
-                        <h4 class="category-title">Software Development</h4>
-                        <div class="badges">
-                            <span class="badge" data-delay="0">OOP</span>
-                            <span class="badge" data-delay="80">Design Patterns</span>
-                            <span class="badge" data-delay="160">Agile Methodologies</span>
-                        </div>
-                    </article>
-
-                    <article class="category-card" data-animate>
-                        <h4 class="category-title">Tools &amp; Technologies</h4>
-                        <div class="badges">
-                            <span class="badge" data-delay="0">MySQL Workbench</span>
-                            <span class="badge" data-delay="60">SSMS</span>
-                            <span class="badge" data-delay="120">Visual Studio</span>
-                            <span class="badge" data-delay="180">IIS</span>
-                            <span class="badge" data-delay="240">Microsoft Office</span>
-                            <span class="badge" data-delay="300">LaTeX</span>
-                            <span class="badge" data-delay="360">Weka GUI</span>
-                            <span class="badge" data-delay="420">StarUML</span>
-                            <span class="badge" data-delay="480">NetBeans</span>
-                            <span class="badge" data-delay="540">Eclipse</span>
-                            <span class="badge" data-delay="600">OverLeaf</span>
-                            <span class="badge" data-delay="660">GitHub</span>
-                        </div>
-                    </article>
-
-                    <article class="category-card" data-animate>
-                        <h4 class="category-title">Soft Skills &amp; Languages</h4>
-                        <div class="badges">
-                            <span class="badge soft" data-delay="0">Teamwork</span>
-                            <span class="badge soft" data-delay="60">Problem Solving</span>
-                            <span class="badge soft" data-delay="120">Project Management</span>
-                            <span class="badge soft" data-delay="180">Communication</span>
-                            <span class="badge soft" data-delay="240">Adaptability</span>
-                            <span class="badge lang" data-delay="300">Arabic</span>
-                            <span class="badge lang" data-delay="360">English</span>
-                            <span class="badge lang" data-delay="420">French</span>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Row 3: Core Competencies (separate visual treatment) -->
-                <div class="core-competencies">
-                  <h3 class="core-title">Core Competencies</h3>
-                  <div class="bars-row" aria-hidden="false">
-                    <div class="bar-card" data-animate>
-                        <div class="bar-info">
-                            <h5>Software Engineering Fundamentals</h5>
-                            <div class="bar" data-percent="90">
-                                <div class="bar-fill"></div>
-                                <div class="bar-label">90%</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bar-card" data-animate>
-                        <div class="bar-info">
-                            <h5>Object-Oriented Programming (OOP)</h5>
-                            <div class="bar" data-percent="95">
-                                <div class="bar-fill"></div>
-                                <div class="bar-label">95%</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bar-card" data-animate>
-                        <div class="bar-info">
-                            <h5>Problem Solving</h5>
-                            <div class="bar" data-percent="85">
-                                <div class="bar-fill"></div>
-                                <div class="bar-label">85%</div>
-                            </div>
-                        </div>
+                <div class="overview-card" data-animate>
+                    <div class="card-icon">🌐</div>
+                    <h3 class="card-title" data-en="Web Development" data-fr="Développement Web">
+                        Web Development</h3>
+                    <div class="card-skills">
+                        <span class="skill-dot">HTML</span>
+                        <span class="skill-dot">CSS</span>
+                        <span class="skill-dot">JavaScript</span>
+                        <span class="skill-dot">ASP.NET</span>
+                        <span class="skill-dot">WordPress</span>
+                        <span class="skill-dot">MySQL</span>
                     </div>
                 </div>
 
-                <!-- Optional particle canvas -->
-                <canvas class="skills-particles" aria-hidden="true"></canvas>
+                <div class="overview-card overview-wide" data-animate>
+                    <div class="card-icon">🧰</div>
+                    <h3 class="card-title" data-en="Tools & Technologies" data-fr="Outils & Technologies">Tools &
+                        Technologies</h3>
+                    <div class="card-skills small">
+                        <span class="skill-dot">Visual Studio</span>
+                        <span class="skill-dot">MySQL Workbench</span>
+                        <span class="skill-dot">GitHub</span>
+                        <span class="skill-dot">Eclipse</span>
+                        <span class="skill-dot">Netbeans</span>
+                        <span class="skill-dot">SQL SSMS</span>
+                    </div>
+                </div>
             </div>
-        </section>
+
+            <!-- Show More toggle to expand detailed categories -->
+            <div class="details-toggle-wrap">
+                <button id="details-toggle" class="details-toggle" 
+                    data-en="Show More" 
+                    data-fr="Afficher Plus"
+                    data-expanded-en="Show Less" 
+                    data-expanded-fr="Afficher Moins">
+                    Show More
+                </button>
+            </div>
+
+            <!-- Detailed skills (hidden by default) -->
+            <div id="skills-details" class="skills-details">
+                <!-- Desktop Development -->
+                <div class="category-card" data-animate>
+                    <h4 class="category-title" data-en="Desktop Development" data-fr="Développement Desktop">Desktop Development</h4>
+                    <div class="badges">
+                        <span class="badge">Java/Java Swing</span>
+                        <span class="badge">MySQL</span>
+                        <span class="badge">Netbeans IDE</span>
+                    </div>
+                </div>
+
+                <!-- Simulation -->
+                <div class="category-card" data-animate>
+                    <h4 class="category-title" data-en="Simulation" data-fr="Simulation">Simulation</h4>
+                    <div class="badges">
+                        <span class="badge">iFogSim v2</span>
+                        <span class="badge">MATLAB</span>
+                    </div>
+                </div>
+
+                <!-- Software Development -->
+                <div class="category-card" data-animate>
+                    <h4 class="category-title" data-en="Software Development" data-fr="Développement Logiciel">Software Development</h4>
+                    <div class="badges">
+                        <span class="badge">OOP</span>
+                        <span class="badge">Design Patterns</span>
+                        <span class="badge">Agile Methodologies</span>
+                    </div>
+                </div>
+
+                <!-- Additional Tools & Technologies -->
+                <div class="category-card" data-animate>
+                    <h4 class="category-title" data-en="Additional Tools" data-fr="Outils Supplémentaires">Additional Tools</h4>
+                    <div class="badges">
+                        <span class="badge">IIS</span>
+                        <span class="badge">Microsoft Office</span>
+                        <span class="badge">LaTeX</span>
+                        <span class="badge">Weka GUI</span>
+                        <span class="badge">StarUML</span>
+                        <span class="badge">OverLeaf</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="category-card" data-animate>
+                    <h4 class="category-title" data-en="Soft Skills" data-fr="Compétences Douces">Soft Skills</h4>
+                    <div class="badges">
+                        <span class="badge">Teamwork</span>
+                        <span class="badge">Problem Solving</span>
+                        <span class="badge">Project Management</span>
+                        <span class="badge">Communication</span>
+                        <span class="badge">Adaptability</span>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="category-card" data-animate>
+                    <h4 class="category-title" data-en="Languages" data-fr="Langues">Languages</h4>
+                    <div class="badges">
+                        <span class="badge lang">Arabic</span>
+                        <span class="badge lang">English</span>
+                        <span class="badge lang">French</span>
+                    </div>
+                </div>
+
+                <!-- Skill Level Bars -->
+                <div class="bar-card" data-animate>
+                    <div class="bar-info">
+                        <h5 data-en="Object-Oriented Programming (OOP)" data-fr="Programmation Orientée Objet (POO)">
+                            Object-Oriented Programming (OOP)</h5>
+                        <div class="bar" data-percent="95">
+                            <div class="bar-fill"></div>
+                            <div class="bar-label">95%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-card" data-animate>
+                    <div class="bar-info">
+                        <h5 data-en="Software Engineering" data-fr="Génie Logiciel">
+                            Software Engineering</h5>
+                        <div class="bar" data-percent="90">
+                            <div class="bar-fill"></div>
+                            <div class="bar-label">90%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bar-card" data-animate>
+                    <div class="bar-info">
+                        <h5 data-en="Problem Solving" data-fr="Résolution de Problèmes">Problem Solving</h5>
+                        <div class="bar" data-percent="85">
+                            <div class="bar-fill"></div>
+                            <div class="bar-label">85%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of skills-details -->
+
+            <!-- Optional particle canvas -->
+            <canvas class="skills-particles" aria-hidden="true"></canvas>
+        </div>
+    </section>
 
     <section class="projects fade-in" id="projects">
         <div class="projects-content">
@@ -270,9 +294,15 @@
             <div class="projects-list">
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>ERP Technical Support &amp; Developer — COSOFT Technology</h3>
-                        <p class="project-date">Sep 2025 – Present</p>
-                        <p>Providing technical support and enhancements for the ERP system: troubleshooting, resolving issues, and developing new features to improve usability, reliability and performance.</p>
+                        <h3 data-en="ERP Technical Support & Developer — COSOFT Technology"
+                            data-fr="Support Technique ERP & Développeur — COSOFT Technology">ERP Technical Support &
+                            Developer — COSOFT Technology</h3>
+                        <p class="project-date" data-en="Sep 2025 – Present" data-fr="Sep 2025 – Présent">Sep 2025 –
+                            Present</p>
+                        <p data-en="Providing technical support and enhancements for the ERP system: troubleshooting, resolving issues, and developing new features to improve usability, reliability and performance."
+                            data-fr="Fourniture d'un support technique et d'améliorations pour le système ERP : dépannage, résolution de problèmes et développement de nouvelles fonctionnalités pour améliorer l'utilisabilité, la fiabilité et les performances.">
+                            Providing technical support and enhancements for the ERP system: troubleshooting, resolving
+                            issues, and developing new features to improve usability, reliability and performance.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Visual Studio</span>
                             <span class="tech-tag">ASP.NET</span>
@@ -283,9 +313,15 @@
 
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>Study of task placement impact on IoT efficiency (Final Year Project)</h3>
-                        <p class="project-date">Dec 2023 – Aug 2024</p>
-                        <p>Developed algorithms for dynamic task allocation and implemented multiple task placement strategies in a simulated IoT environment (devices, edge nodes, cloud).</p>
+                        <h3 data-en="Study of task placement impact on IoT efficiency (Final Year Project)"
+                            data-fr="Étude de l'impact du placement des tâches sur l'efficacité IoT (PFE)">Study of task
+                            placement impact on IoT efficiency (Final Year Project)</h3>
+                        <p class="project-date" data-en="Dec 2023 – Aug 2024" data-fr="Déc 2023 – Août 2024">Dec 2023 –
+                            Aug 2024</p>
+                        <p data-en="Developed algorithms for dynamic task allocation and implemented multiple task placement strategies in a simulated IoT environment (devices, edge nodes, cloud)."
+                            data-fr="Développement d'algorithmes pour l'allocation dynamique des tâches et implémentation de multiples stratégies de placement dans un environnement IoT simulé.">
+                            Developed algorithms for dynamic task allocation and implemented multiple task placement
+                            strategies in a simulated IoT environment (devices, edge nodes, cloud).</p>
                         <div class="project-tech">
                             <span class="tech-tag">Java</span>
                             <span class="tech-tag">iFogSim v2</span>
@@ -296,9 +332,15 @@
 
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>Medical Management Application for Ophthalmology Clinic (Final Year Project)</h3>
-                        <p class="project-date">Jan 2022 – Aug 2022</p>
-                        <p>Designed and developed a patient management system with scheduling and appointment modules. Deployed on a secure cloud platform for accessibility and scalability.</p>
+                        <h3 data-en="Medical Management Application for Ophthalmology Clinic (Final Year Project)"
+                            data-fr="Application de Gestion Médicale pour Clinique d'Ophtalmologie (PFE)">Medical
+                            Management Application for Ophthalmology Clinic (Final Year Project)</h3>
+                        <p class="project-date" data-en="Jan 2022 – Aug 2022" data-fr="Jan 2022 – Août 2022">Jan 2022 –
+                            Aug 2022</p>
+                        <p data-en="Designed and developed a patient management system with scheduling and appointment modules. Deployed on a secure cloud platform for accessibility and scalability."
+                            data-fr="Conception et développement d'un système de gestion des patients avec modules de planification et de rendez-vous. Déployé sur une plateforme cloud sécurisée.">
+                            Designed and developed a patient management system with scheduling and appointment modules.
+                            Deployed on a secure cloud platform for accessibility and scalability.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Java</span>
                             <span class="tech-tag">Java Swing</span>
@@ -309,9 +351,15 @@
 
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>Internship — Ophthalmology Clinic (OPHTA)</h3>
-                        <p class="project-date">Jan 2022 – Aug 2022</p>
-                        <p>Developed features for a medical management application using Java, Java Swing and MySQL as part of a management project.</p>
+                        <h3 data-en="Internship — Ophthalmology Clinic (OPHTA)"
+                            data-fr="Stage — Clinique d'Ophtalmologie (OPHTA)">Internship — Ophthalmology Clinic (OPHTA)
+                        </h3>
+                        <p class="project-date" data-en="Jan 2022 – Aug 2022" data-fr="Jan 2022 – Août 2022">Jan 2022 –
+                            Aug 2022</p>
+                        <p data-en="Developed features for a medical management application using Java, Java Swing and MySQL as part of a management project."
+                            data-fr="Développement de fonctionnalités pour une application de gestion médicale utilisant Java, Java Swing et MySQL dans le cadre d'un projet de gestion.">
+                            Developed features for a medical management application using Java, Java Swing and MySQL as
+                            part of a management project.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Java</span>
                             <span class="tech-tag">Java Swing</span>
@@ -322,9 +370,14 @@
 
                 <div class="project-card">
                     <div class="project-info">
-                        <h3>General Medical Clinic Management App</h3>
+                        <h3 data-en="General Medical Clinic Management App"
+                            data-fr="App de Gestion de Clinique Médicale Générale">General Medical Clinic Management App
+                        </h3>
                         <p class="project-date">2022</p>
-                        <p>Developed application for general clinic management as a management project using Java and MySQL.</p>
+                        <p data-en="Developed application for general clinic management as a management project using Java and MySQL."
+                            data-fr="Développement d'une application pour la gestion de clinique générale comme projet de gestion utilisant Java et MySQL.">
+                            Developed application for general clinic management as a management project using Java and
+                            MySQL.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Java</span>
                             <span class="tech-tag">Java Swing</span>
@@ -336,19 +389,21 @@
         </div>
     </section>
 
-    <main> 
+    <main>
         <!-- Add other sections here if necessary -->
     </main>
-        <section class="contact fade-in" id="contact">
-            <div class="contact-content">
-               
+    <section class="contact fade-in" id="contact">
+        <div class="contact-content">
 
-                <div class="full">
-                    <div class="Contact-Form">
-                    
-                        <h1 data-en="Contact Me" data-fr="Contactez-moi">Contact Me</h1>
-  <p data-en="Please fill in the form below to send me a message" data-fr="Veuillez remplir le formulaire ci-dessous pour m'envoyer un message">Please fill in the form below to send me a message</p>
-                       <!--  <form action="/send" method="POST">
+
+            <div class="full">
+                <div class="Contact-Form">
+
+                    <h1 data-en="Contact Me" data-fr="Contactez-moi">Contact Me</h1>
+                    <p data-en="Please fill in the form below to send me a message"
+                        data-fr="Veuillez remplir le formulaire ci-dessous pour m'envoyer un message">Please fill in the
+                        form below to send me a message</p>
+                    <!--  <form action="/send" method="POST">
                             <div class="input-container">
                                 <div class="input-fields">
                                     <input type="text" name="name" placeholder="Your Name *" required>
@@ -362,39 +417,43 @@
                             <button type="submit">Send Message</button>
                         </form>-->
 
-                        <form id="contactForm">
-                            <div class="input-container">
-                                <div class="input-fields">
-                                    <input type="text" name="name" id="name" placeholder="Your Name *" required>
-                                    <input type="email" name="email" id="email" placeholder="Your Email *" required>
-                                    <input type="tel" name="phone" id="phone" placeholder="Your Phone *" required>
-                                </div>
-                                <div class="msg">
-                                    <textarea name="message" id="message" placeholder="Your Message *" required></textarea>
-                                </div>
+                    <form id="contactForm">
+                        <div class="input-container">
+                            <div class="input-fields">
+                                <input type="text" name="name" id="name" placeholder="Your Name *" data-en="Your Name *"
+                                    data-fr="Votre Nom *" required>
+                                <input type="email" name="email" id="email" placeholder="Your Email *"
+                                    data-en="Your Email *" data-fr="Votre Email *" required>
+                                <input type="tel" name="phone" id="phone" placeholder="Your Phone *"
+                                    data-en="Your Phone *" data-fr="Votre Téléphone *" required>
                             </div>
-                            <button type="submit">Send Message</button>
-                        </form>
-                        
-                        <script>
-                        document.getElementById("contactForm").addEventListener("submit", async function(event) {
+                            <div class="msg">
+                                <textarea name="message" id="message" placeholder="Your Message *"
+                                    data-en="Your Message *" data-fr="Votre Message *" required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" data-en="Send Message" data-fr="Envoyer le Message">Send Message</button>
+                    </form>
+
+                    <script>
+                        document.getElementById("contactForm").addEventListener("submit", async function (event) {
                             event.preventDefault();
-                            
+
                             const submitButton = event.target.querySelector('button[type="submit"]');
                             const originalText = submitButton.textContent;
-                            
+
                             // Disable button and show loading state
                             submitButton.disabled = true;
                             submitButton.textContent = "Sending...";
                             submitButton.style.opacity = "0.7";
-                        
+
                             const formData = {
                                 name: document.getElementById("name").value,
                                 email: document.getElementById("email").value,
                                 phone: document.getElementById("phone").value,
                                 message: document.getElementById("message").value
                             };
-                        
+
                             try {
                                 const origin = window.location.origin;
                                 const isLocal = origin.includes('localhost');
@@ -404,14 +463,14 @@
                                     headers: { "Content-Type": "application/json" },
                                     body: JSON.stringify(formData)
                                 });
-                        
+
                                 const result = await response.json();
-                                
+
                                 if (response.ok) {
                                     submitButton.textContent = "✓ Sent!";
                                     submitButton.style.background = "#28a745";
                                     document.getElementById("contactForm").reset();
-                                    
+
                                     setTimeout(() => {
                                         submitButton.textContent = originalText;
                                         submitButton.style.background = "";
@@ -425,7 +484,7 @@
                                 submitButton.textContent = "✗ Error";
                                 submitButton.style.background = "#dc3545";
                                 alert("Error: " + error.message);
-                                
+
                                 setTimeout(() => {
                                     submitButton.textContent = originalText;
                                     submitButton.style.background = "";
@@ -434,37 +493,40 @@
                                 }, 3000);
                             }
                         });
-                        </script>
-                    </div>
+                    </script>
                 </div>
             </div>
-        </section>
-    
-        <footer>
-            <div class="footerContainer">
-                <div class="socialIcons">
-                    <a href="https://www.facebook.com/KamelELM/"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/ka__me_____l/"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://x.com/ElmedjadjiK"><i class="fa-brands fa-twitter"></i></a>
-                    <a href=""><i class="fa-brands fa-google-plus"></i></a>
-                    <a href=""><i class="fa-brands fa-youtube"></i></a>
-                </div>
-                <div class="footerNav">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact Me</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footerBottom">
-                <p>Copyright &copy;2024; Designed by <span class="designer">KAMEL</span></p>
-            </div>
-        </footer>
-    <script src="script.js"></script>
-    
+        </div>
+    </section>
 
-    
+    <footer>
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href="https://www.facebook.com/KamelELM/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/ka__me_____l/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/ElmedjadjiK"><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-google-plus"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerBottom">
+            <p><span data-en="Copyright &copy;2024; Designed by "
+                    data-fr="Droits d'auteur &copy;2024; Conçu par ">Copyright &copy;2024; Designed by </span><span
+                    class="designer">KAMEL</span></p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+
+
     <script src="smoothScroll.js"></script>
 </body>
+
 </html>

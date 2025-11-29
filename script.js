@@ -1,14 +1,76 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ============================================
+    // MOBILE MENU FUNCTIONALITY
+    // ============================================
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.querySelector('.navbar');
+    const mobileNavLinks = document.querySelectorAll('.navbar a');
+
+    // Create menu overlay
+    const menuOverlay = document.createElement('div');
+    menuOverlay.className = 'menu-overlay';
+    document.body.appendChild(menuOverlay);
+
+    // Toggle mobile menu
+    function toggleMenu() {
+        menuToggle.classList.toggle('active');
+        navbar.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        document.body.style.overflow = navbar.classList.contains('active') ? 'hidden' : '';
+    }
+
+    // Close mobile menu
+    function closeMenu() {
+        menuToggle.classList.remove('active');
+        navbar.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Hamburger click handler
+    if (menuToggle) {
+        menuToggle.addEventListener('click', toggleMenu);
+    }
+
+    // Close menu when clicking overlay
+    menuOverlay.addEventListener('click', closeMenu);
+
+    // Close menu when clicking a nav link
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                closeMenu();
+            }
+        });
+    });
+
+    // Close menu on window resize if desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            closeMenu();
+        }
+    });
+
+    // Detect touch devices and disable custom cursor
+    const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    if (isTouchDevice) {
+        document.documentElement.style.setProperty('cursor', 'auto', 'important');
+    }
+
+    // ============================================
+    // EXISTING FUNCTIONALITY
+    // ============================================
+
     // Theme Toggle Functionality
     const themeToggle = document.getElementById('theme-toggle');
     const html = document.documentElement;
     const homeImageLight = document.getElementById('home-image');
     const homeImageDark = document.getElementById('home-image-dark');
-    
+
     // Get saved theme or default to light
     const savedTheme = localStorage.getItem('theme') || 'light';
     html.setAttribute('data-theme', savedTheme);
-    
+
     // Function to update images based on theme
     function updateImages(theme) {
         if (theme === 'dark') {
@@ -19,10 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (homeImageDark) homeImageDark.style.display = 'none';
         }
     }
-    
+
     // Initialize images on load
     updateImages(savedTheme);
-    
+
     // Theme toggle click handler
     themeToggle.addEventListener('click', () => {
         const currentTheme = html.getAttribute('data-theme');
@@ -31,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', newTheme);
         updateImages(newTheme);
     });
-    
+
     // Animated Text Rotation for "Hi, I am KAMEL"
     const animatedName = document.getElementById('animated-name');
     const nameVariations = [
@@ -41,41 +103,41 @@ document.addEventListener('DOMContentLoaded', () => {
         'Problem Solver',
         'Team Worker'
     ];
-    
+
     let currentNameIndex = 0;
-    
+
     function rotateName() {
         if (animatedName) {
             animatedName.classList.add('fade-out');
-            
+
             setTimeout(() => {
                 currentNameIndex = (currentNameIndex + 1) % nameVariations.length;
                 animatedName.textContent = nameVariations[currentNameIndex];
                 animatedName.classList.remove('fade-out');
                 animatedName.classList.add('fade-in');
-                
+
                 setTimeout(() => {
                     animatedName.classList.remove('fade-in');
                 }, 500);
             }, 500);
         }
     }
-    
+
     // Start name rotation every 3 seconds
     if (animatedName) {
         setInterval(rotateName, 3000);
     }
-    
+
     // Header scroll effect with parallax
     const header = document.querySelector('.header');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
-        
+
         // Subtle header parallax (removed to avoid conflicts)
     });
 
@@ -91,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (targetSection) {
                 const headerHeight = document.querySelector('.header').offsetHeight;
                 const targetPosition = targetSection.offsetTop - headerHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -214,7 +276,20 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('[data-en]').forEach(element => {
             const text = element.getAttribute(`data-${lang}`);
             if (text) {
-                element.textContent = text;
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = text;
+                } else {
+                    // Check if the content contains HTML tags (like the footer copyright)
+                    if (element.innerHTML.includes('<') && element.children.length > 0) {
+                        // For complex elements, we might need a different strategy
+                        // But for now, let's assume we only use data-en on leaf nodes or simple text
+                        // If we really need to preserve children, we should put data attributes on the text nodes' parents
+                        // For the footer, we'll wrap the text in a span in HTML
+                        element.innerHTML = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
             }
         });
 
@@ -223,6 +298,11 @@ document.addEventListener('DOMContentLoaded', () => {
             cvLink.setAttribute('href', 'Kamel_CV_fr.pdf');
         } else {
             cvLink.setAttribute('href', 'Kamel_CV_en.pdf');
+        }
+        
+        // Update toggle button text if it exists
+        if (window.updateToggleButtonText) {
+            window.updateToggleButtonText();
         }
     }
 
@@ -241,7 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mouseX = e.clientX / window.innerWidth;
             mouseY = e.clientY / window.innerHeight;
         });
-        
+
         function updateParallax() {
             const floatingElements = document.querySelectorAll('.image-container');
             floatingElements.forEach((element, index) => {
@@ -258,20 +338,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add ripple effect to buttons
     const buttons = document.querySelectorAll('button, .btn-box a');
     buttons.forEach(button => {
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
             const ripple = document.createElement('span');
             const rect = this.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
             const x = e.clientX - rect.left - size / 2;
             const y = e.clientY - rect.top - size / 2;
-            
+
             ripple.style.width = ripple.style.height = size + 'px';
             ripple.style.left = x + 'px';
             ripple.style.top = y + 'px';
             ripple.classList.add('ripple');
-            
+
             this.appendChild(ripple);
-            
+
             setTimeout(() => {
                 ripple.remove();
             }, 600);
@@ -285,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
         h1.textContent = '';
         h1.style.borderRight = '2px solid';
         h1.style.animation = 'blink 1s infinite';
-        
+
         let i = 0;
         const typeWriter = () => {
             if (i < text.length) {
@@ -298,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 500);
             }
         };
-        
+
         setTimeout(typeWriter, 500);
     }
 
@@ -350,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        
+
         cursor.style.left = mouseX + 'px';
         cursor.style.top = mouseY + 'px';
     });
@@ -359,23 +439,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function animateFollower() {
         followerX += (mouseX - followerX) * 0.15;
         followerY += (mouseY - followerY) * 0.15;
-        
+
         cursorFollower.style.left = followerX + 'px';
         cursorFollower.style.top = followerY + 'px';
-        
+
         requestAnimationFrame(animateFollower);
     }
     animateFollower();
 
     // Hover effects on interactive elements
     const interactiveElements = document.querySelectorAll('a, button, .btn-box a, .project-card, .skill-category, input, textarea, select, .theme-toggle');
-    
+
     interactiveElements.forEach(element => {
         element.addEventListener('mouseenter', () => {
             cursor.classList.add('hover');
             cursorFollower.classList.add('hover');
         });
-        
+
         element.addEventListener('mouseleave', () => {
             cursor.classList.remove('hover');
             cursorFollower.classList.remove('hover');
@@ -443,33 +523,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Show More / Hide Details toggle (language aware)
     const toggleBtn = document.getElementById('details-toggle');
-    const grid = document.getElementById('category-grid');
+    const skillsDetails = document.getElementById('skills-details');
     const skillsSection = document.getElementById('skills');
-    if (skillsSection && toggleBtn && grid) {
-  // Keep inline display cleared so CSS controls visibility
-  grid.style.display = '';
-  toggleBtn.addEventListener('click', () => {
-    const expanded = skillsSection.classList.toggle('expanded');
-    grid.setAttribute('aria-hidden', expanded ? 'false' : 'true');
-    grid.style.display = '';
+    
+    // Function to update button text based on language and state (accessible globally for language switcher)
+    window.updateToggleButtonText = function() {
+        if (!toggleBtn || !skillsSection) return;
+        
+        const langSelect = document.getElementById('language-select');
+        const isFr = langSelect && langSelect.value === 'fr';
+        const expanded = skillsSection.classList.contains('expanded');
+        
+        if (expanded) {
+            toggleBtn.textContent = isFr 
+                ? toggleBtn.getAttribute('data-expanded-fr') 
+                : toggleBtn.getAttribute('data-expanded-en');
+        } else {
+            toggleBtn.textContent = isFr 
+                ? toggleBtn.getAttribute('data-fr') 
+                : toggleBtn.getAttribute('data-en');
+        }
+    };
+    
+    if (skillsSection && toggleBtn && skillsDetails) {
+        // Initialize button text
+        window.updateToggleButtonText();
+        
+        // Toggle button click handler
+        toggleBtn.addEventListener('click', () => {
+            const expanded = skillsSection.classList.toggle('expanded');
+            skillsDetails.setAttribute('aria-hidden', expanded ? 'false' : 'true');
 
-    // Compute header offset to avoid fixed header covering content
-    const headerEl = document.querySelector('.header');
-    const offset = headerEl ? headerEl.offsetHeight + 12 : 0;
+            // Compute header offset to avoid fixed header covering content
+            const headerEl = document.querySelector('.header');
+            const offset = headerEl ? headerEl.offsetHeight + 12 : 0;
 
-    // Scroll to the revealed content when expanding; back to section when collapsing
-    const targetEl = expanded ? grid : skillsSection;
-    const targetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
-    window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+            // Scroll to the revealed content when expanding; back to section when collapsing
+            if (expanded) {
+                // Scroll to the details section
+                const targetTop = skillsDetails.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+            }
 
-    // Update button label based on current language
-    const langSelect = document.getElementById('language-select');
-    const isFr = langSelect && langSelect.value === 'fr';
-    toggleBtn.textContent = expanded
-      ? (isFr ? toggleBtn.getAttribute('data-expanded-fr') : toggleBtn.getAttribute('data-expanded-en'))
-      : (isFr ? toggleBtn.getAttribute('data-fr') : toggleBtn.getAttribute('data-en'));
-  });
-}
+            // Update button label based on current language
+            window.updateToggleButtonText();
+        });
+    }
 
     // Optional floating particles in skills section
     const particlesLayer = document.querySelector('.skills-particles');
